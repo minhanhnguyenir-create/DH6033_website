@@ -1,0 +1,392 @@
+:root {
+    --ink: #252a25;
+    --muted: #6b7068;
+    --paper: #f7f5ef;
+    --card: #fffefa;
+    --green: #405b4b;
+    --green-dark: #293d32;
+    --gold: #b88b4a;
+    --line: #e6e1d6;
+}
+
+/* Reset & Base Styles */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    min-height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.55;
+}
+
+a {
+    color: inherit;
+}
+
+/* Top Navigation */
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 16px 5%;
+    background: #fffefa;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    z-index: 5;
+}
+
+.brand {
+    font: 700 1.05rem Georgia, serif;
+    letter-spacing: .12em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.brand span {
+    color: var(--gold);
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: .88rem;
+    color: var(--muted);
+}
+
+nav a:hover {
+    color: var(--green);
+}
+
+/* Layout */
+.layout {
+    display: grid;
+    grid-template-columns: 290px minmax(0, 1fr);
+    min-height: calc(100vh - 60px);
+}
+
+/* Sidebar */
+.sidebar {
+    padding: 24px 20px;
+    background: #f0eee6;
+    border-right: 1px solid var(--line);
+    overflow: auto;
+}
+
+.sidebar h2 {
+    font: 500 1.45rem Georgia, serif;
+    margin: 0 0 6px;
+}
+
+.side-intro {
+    font-size: .85rem;
+    color: var(--muted);
+    margin: 0 0 20px;
+}
+
+.country-group {
+    margin: 0 0 10px;
+}
+
+.country-link {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 11px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.country-link:hover,
+.country-link.active {
+    background: #e2e5dc;
+    color: var(--green-dark);
+}
+
+.country-cities {
+    padding: 0 0 8px 35px;
+}
+
+.country-cities a {
+    display: block;
+    padding: 6px 8px;
+    text-decoration: none;
+    color: var(--muted);
+    font-size: .88rem;
+}
+
+.country-cities a:hover {
+    color: var(--green);
+    text-decoration: underline;
+}
+
+/* Main Content & Hero Section */
+.main-content {
+    min-width: 0;
+    padding: 26px 30px;
+}
+
+.hero {
+    padding: 30px 34px;
+    border-radius: 12px;
+    background: linear-gradient(110deg, #304838e8, #30483880), var(--hero-image) center/cover;
+    color: white;
+    margin-bottom: 24px;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    font-size: .72rem;
+    font-weight: 700;
+    color: #c99d5b;
+}
+
+.hero h1 {
+    font: 500 clamp(2.1rem, 4vw, 3.6rem)/1.05 Georgia, serif;
+    margin: 10px 0;
+}
+
+.hero p {
+    max-width: 650px;
+    color: #f0f0e9;
+    margin: 0;
+}
+
+/* Cards & Lists */
+.section-title {
+    font: 500 1.8rem Georgia, serif;
+    margin: 0 0 14px;
+}
+
+.muted {
+    color: var(--muted);
+}
+
+.city-grid,
+.attraction-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 17px;
+}
+
+.place-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
+    transition: transform .18s, box-shadow .18s;
+}
+
+.place-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px #18251a12;
+}
+
+.place-card img {
+    display: block;
+    width: 100%;
+    height: 155px;
+    object-fit: cover;
+    background: #ddd;
+}
+
+.place-card .body {
+    padding: 14px;
+}
+
+.place-card h3 {
+    font: 500 1.2rem Georgia, serif;
+    margin: 4px 0 2px;
+}
+
+.native {
+    color: #8a6b3f;
+    font-size: .9rem;
+}
+
+.place-card p {
+    font-size: .85rem;
+    color: var(--muted);
+    margin: 8px 0;
+}
+
+.small-label {
+    font-size: .68rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+}
+
+.attraction-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.attraction-row {
+    display: grid;
+    grid-template-columns: 115px minmax(0, 1fr);
+    gap: 16px;
+    align-items: center;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+    text-decoration: none;
+    padding-right: 16px;
+}
+
+.attraction-row img {
+    width: 115px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.attraction-row h3 {
+    font: 500 1.15rem Georgia, serif;
+    margin: 2px 0;
+}
+
+.attraction-row p {
+    font-size: .85rem;
+    color: var(--muted);
+    margin: 4px 0;
+}
+
+/* Details & Map */
+.detail-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(270px, .9fr);
+    gap: 28px;
+    align-items: start;
+}
+
+.detail-image {
+    width: 100%;
+    max-height: 520px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.metadata {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.metadata li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.metadata strong {
+    color: var(--green);
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background: var(--green);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: .88rem;
+}
+
+#globalMap {
+    width: 100%;
+    height: calc(100vh - 115px);
+    min-height: 520px;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    z-index: 1;
+}
+
+.map-caption {
+    font-size: .8rem;
+    color: var(--muted);
+    margin: 9px 2px;
+}
+
+/* Footer */
+footer {
+    padding: 22px 5%;
+    background: var(--green-dark);
+    color: #dce2d9;
+    font-size: .8rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* Responsive Design */
+@media(max-width: 1050px) {
+    .layout {
+        grid-template-columns: 250px minmax(0, 1fr);
+    }
+
+    .city-grid,
+    .attraction-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+}
+
+@media(max-width: 760px) {
+    .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+        max-height: 340px;
+    }
+
+    .main-content {
+        padding: 16px;
+    }
+
+    .city-grid,
+    .attraction-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-layout {
+        grid-template-columns: 1fr;
+    }
+
+    #globalMap {
+        height: 65vh;
+        min-height: 400px;
+    }
+
+    .hero {
+        padding: 24px;
+    }
+}
+
+/* Individual page stylesheet: Attraction: Westminster Abbey */
